@@ -6,6 +6,7 @@ services:
         context: "."
         dockerfile: Dockerfile
       container_name: telegram-mastodon-bridge
+      network_mode: "host" # for ssl magic
       environment:
         - MASTODON_TOKEN=${MASTODON_TOKEN}
         - TELEGRAM_TOKEN=${TELEGRAM_TOKEN}
