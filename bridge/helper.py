@@ -9,7 +9,7 @@ class Footer():
 
 
     def __posted_in(self, name: str) -> str:
-        return f"\r\rPosted in https://t.me/{name}"
+        return f"\r\rPosted in {name}"
 
 
     def __make_text(self, final_text: str, message: telebot.types.Message, character_limit: int) -> List[str]:

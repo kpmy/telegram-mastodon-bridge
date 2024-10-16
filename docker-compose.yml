@@ -6,10 +6,11 @@ services:
         context: "."
         dockerfile: Dockerfile
       container_name: telegram-mastodon-bridge
+      network_mode: "host"
       environment:
         - MASTODON_TOKEN=${MASTODON_TOKEN}
         - TELEGRAM_TOKEN=${TELEGRAM_TOKEN}
         - MASTODON_INSTANCE=${MASTODON_INSTANCE}
         - MASTODON_VISIBILITY=${MASTODON_VISIBILITY}
-        - MASTODON_CHARACTER_LIMIT=500
+        - MASTODON_CHARACTER_LIMIT=2187
       restart: always
