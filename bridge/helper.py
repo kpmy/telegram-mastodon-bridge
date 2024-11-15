@@ -31,6 +31,8 @@ class Footer():
     def text(self, message: telebot.types.Message, character_limit: int) -> List[str]:
         if not message.text:
             message.text = ""
+        if message.quote:
+            message.text = f"> {message.quote.text}\n\n{message.text}"
         final_text: str = message.text # type: ignore
         return self.__make_text(final_text, message, character_limit)
 
